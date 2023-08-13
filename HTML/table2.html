@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1",id = "seminarTable">
+      <tr>
+        <td rowspan="3">Day</td>
+        <td colspan="3">Seminar</td>
+      </tr>
+      <tr>
+        <td colspan="2">Schedule</td>
+        <td rowspan="2">topic</td>
+      </tr>
+      <tr>
+        <td>Begin</td>
+        <td>End</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Monday</td>
+        <td rowspan="2">8:00 pm</td>
+        <td rowspan="2">5:00 pm</td>
+        <td>Introdunction to XML</td>
+      </tr>
+      <tr>
+        <td>Validity DTD and Relax NG</td>
+      </tr>
+      <tr>
+        <td rowspan="3">Tuesday</td>
+        <td>8:00 pm</td>
+        <td>11:00 am</td>
+        <td rowspan="2">Xpath</td>
+      </tr>
+      <tr>
+        <td>11:00 am</td>
+        <td>2:00 pm</td>
+      </tr>
+      <tr>
+        <td>2:00 pm</td>
+        <td>5:00 pm</td>
+        <td rowspan="1">XLS TRANSFORMATION</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>8:00 am</td>
+        <td>12:00 pm</td>
+        <td>XSL Formating objects</td>
+      </tr>
+    </table>
+    <script>
+        // Access the table using DOM and update the data
+        const table = document.getElementById('seminarTable');
+        const tuesdayTopicCell = table.rows[4].cells[3];
+        tuesdayTopicCell.textContent = 'New Topic';
+    
+        const xlsTimeCell = table.rows[6].cells[3];
+        xlsTimeCell.textContent = '2:30 pm - 6:00 pm';
+      </script>
+  </body>
+</html>

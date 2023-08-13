@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container
+        {
+            width: 90vw;
+            height: 90vh;
+            background-color: beige;
+            border: 5px solid black;
+            margin: 10px;
+            
+        }
+        .box
+        {
+            width: 320px;
+            height: 8vh;
+            background-color: blue;
+            border-radius: 13px;
+            border: 3px solid yellow;
+            position: relative;
+            animation-name: myAnime;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+        }
+
+        @keyframes myAnime {
+            from{
+                top: 0;
+                left: 0;
+            }
+            to{
+                top: 0;
+                left: 800px;
+            }
+        }
+
+        #box2
+        {
+            width: 320px;
+            height: 8vh;
+            background-color: blue;
+            border-radius: 13px;
+            border: 3px solid yellow;
+            position: relative;
+            animation-name: myAnime2;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+
+        }
+        @keyframes myAnime2 {
+            from{
+                top: 430px;
+                left: 0;
+            }
+            to{
+                top: 430px;
+                left: 800px;
+            }
+        }
+
+        #ball
+        {
+            width: 40px;
+            height: 40px;
+            background-color: black;
+            border: 3px solid green;
+            border-radius: 50%;
+            position:relative;
+            animation-name: ballAnime;
+            animation-timing-function: linear;
+            animation-duration: 5s;
+            animation-direction: alternate;
+            animation-iteration-count:infinite;
+
+        }
+
+        @keyframes ballAnime {
+            0%
+            {
+                top:0px;
+                left:0px;
+            }
+            25%
+            {
+                top:0px;
+                left: 950px;
+            }
+            65%
+            {
+                top: 300px;
+                left: 50px;
+            }
+            100%
+            {
+                top:300px;
+                left:950px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div id="box2"></div>
+        <div id="ball"></div>
+    </div>
+</body>
+</html>

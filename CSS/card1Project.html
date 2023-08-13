@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        background-color: #0093e9;
+        background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        width: 360px;
+        height: 500px;
+        background-color: white;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 10px;
+      }
+      .card img {
+        width: 100%;
+        height: 40%;
+        border-radius: 20px;
+      }
+      .textbox{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 15px;
+        width: 80%;
+        text-align: center;
+        font-size: 12px;
+        color: grey;
+      }
+      .centeralbox{
+        width: 80%;
+        height: 10%;
+        background-color: rgb(192, 192, 54);
+        display: flex;
+        border-radius: 20px;
+
+      } 
+      #paybutton{
+        width: 80%;
+        height: 9%; 
+        background-color: bisque;
+        color: grey;
+        border-radius: 30px;
+        box-shadow: #0093e9;
+        box-shadow: 1px 1px 5px 5px rgba(85, 93, 94, 0.215) , 5px 5px rgb(99, 124, 126);
+      }
+      .cancelbox a{
+        text-decoration: none;
+        color: darkgray;
+        font-weight: bold;
+        font-size: large;       
+      }
+      .leftbox{
+        width: 72%;
+        display: flex;
+        padding: 5px;
+      }
+      .imgbox img{
+        width: 75%;
+        height: 100%;
+
+      }
+
+      .pricebox p{
+        font-size: small;
+        text-align: center;
+        color: darkslategrey;
+      }
+
+      .rightbox{
+        padding: 8px;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+       </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="cssprojectCard.jpeg" alt="" />
+
+        <div class="textbox">
+          <h2>Order Summary</h2>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+            et fugiat ab! Eius obcaecati facilis repellendus consequuntur
+            consequatur neque. Magni.
+          </p>
+        </div>
+
+        <div class="centeralbox"> 
+            <div class="leftbox">
+                <div class="imgbox">
+                    <img src="ituneforcssProject.png" alt="itunes">
+                </div>
+                <div class="pricebox">
+                    <p>Annual Price</p>
+                    <p>$99.9/year</p>
+                </div>
+
+            </div>
+            <div class="rightbox">
+                Change Order
+            </div>
+
+
+        </div>
+
+        <button id="paybutton">
+            Procced to Payment
+        </button>
+
+        <div class="cancelbox">
+            <a href="#">Cancel Order</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

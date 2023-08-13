@@ -1,0 +1,20 @@
+h1 {
+    font-size: medium;
+    text-align: center;
+}
+
+p{
+    /* font-style: italic; */
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     */
+     background-color: white;
+     color: black;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     /* font-weight: 800; */
+}
+
+#concern
+{
+    /* background-color: green; */
+    background-color: rgba(blue, green, blue,voilet);
+}

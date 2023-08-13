@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-Box</title>
+    <style>
+        *{padding: 0px;margin: 0px;}
+        .container
+        {
+            background-color: beige;
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-around;
+            height: 1500px ;
+        }
+        p{
+            background-color: grey;
+            color: white;
+            border: 2px white solid;
+            margin: 25px;
+        
+        }
+        #leftbox
+        {
+            background-color: aquamarine;
+            border: 3px grey solid;
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+         
+
+        }
+        img{
+            height: 400px;
+            width: 350px;
+        }
+        rightbox{
+            border: olivedrab solid 3px;
+            width: 500px;
+        }
+        @media (max-width:640px)
+        {
+            .container
+            {
+                flex-direction: column;
+                align-items: space-evenly;
+            }
+            #leftbox{
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="leftbox">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, veniam enim quod hic debitis ducimus dolore sequi quos perferendis ratione! Similique vitae veritatis qui aperiam inventore sunt explicabo nobis iure.
+            Magnam autem nam rem laborum cumque nobis ea hic. Dolorum explicabo accusantium, tenetur quos consequatur fugiat eligendi cum similique unde libero nulla asperiores sit sint veniam odio illo ab! Sapiente!
+            Dignissimos blanditiis culpa illum dolore minima nisi eum, sunt, quod possimus rerum nulla rem amet iure odio quos? Quos in quidem laboriosam necessitatibus neque veritatis libero fuga molestiae aspernatur tempore.</p>
+        
+        
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed accusamus minima corrupti error, voluptatem quae distinctio totam laboriosam consectetur ea libero provident deleniti obcaecati repudiandae veniam similique nemo in!
+        Natus, repellat! Cupiditate porro animi doloremque, inventore repudiandae id ea, quisquam vitae nisi modi, nulla fuga illo suscipit. Pariatur ab laborum voluptates incidunt perspiciatis quis, aliquid ratione quod quibusdam maiores.</p>
+        </div>
+
+        <div id="rightbox">
+            <img src="IMG_0053.JPG" alt="Picture of rana saad">
+        </div>
+    </div>
+    
+</body>
+</html>

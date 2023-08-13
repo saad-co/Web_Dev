@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        body{
+            height: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            background-color: beige;
+            width: 50px;
+            height: 50px;
+          
+            border: 3px solid black;
+            border-radius: 10%;
+            transition: all;
+            transition-duration: 1s;
+            transition-delay: 0s;
+            transition-timing-function: ease;
+            text-align: center;
+            font-size: larger;
+            
+        }
+        
+        .box:hover{
+            transition: width 2s;
+            transform: height 5s;
+            width: 250px;
+            height: 25px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">Hover Me</div>
+</body>
+</html>

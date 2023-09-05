@@ -1,0 +1,227 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.topper{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    padding: 0px 4vw;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-bottom: 1px solid grey;
+}
+
+.topper button{
+    background-color: #C390D4;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 8px;
+    font-weight: 400;
+    color: white;
+}
+
+.topper h2{
+    font-weight: 1000;
+    font-size: 3vmax;
+}
+
+.leftNav{
+    display: flex;
+    gap: 4vw;
+    align-items: center;
+}
+
+.leftNav h4{
+    font-size: 1.3vmax;
+    cursor: pointer;
+
+}
+
+.leftNav i{
+    font-size: 5vw;
+    display: none;
+}
+
+.content{
+    height: calc(100% - 100px);
+    width: 100%;
+    /* background-color: burlywood; */
+    display: flex;
+}
+
+.left{
+    height: 100%;
+    width: 50%;
+    padding: 2vw 4vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    height: 100%;
+    width: 50%;
+}
+
+.left h2{
+    font-size: 4vw;
+    line-height: 1;
+    width: 90%;
+} 
+
+.left span{
+    color:#FF718B;
+    font-weight: 1000;
+}
+
+.left p{
+    font-size: 1.4vw;
+    font-weight: 200;
+    margin-top: 2.5vw;
+    margin-bottom: 2vw;
+}
+
+.left button{
+    background-color: #FF718B;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2vw;
+    font-weight: 400;
+    width: 30%;
+
+}
+
+.right img{
+    object-fit: cover;
+    height: 90%;
+    width: 100%;
+
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-items{
+    display: none;
+}
+
+
+@media (max-width:600px) {
+    .topper{
+        background-color: lightseagreen;
+        padding: 0vw 6vw;
+        height: 80px;
+    }
+    .topper h2{
+        font-weight: 1000;
+        font-size: 10vw;
+    }
+
+    .leftNav h4{
+        display: none;
+    }
+
+    .leftNav i{
+        display: block;
+        font-size: 9vw;
+        font-weight: 12000; 
+    }
+    
+    .topper button{
+        display: none;
+    }
+
+    .content{
+        flex-direction: column;
+        width: 100%;
+        height: calc(100% - 80px);
+        position: relative;
+    }
+    .left{
+        width: 100%;
+        height: 50%;
+        padding: 1vw 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: red; */
+    }
+    .right{
+        width: 100%;
+        height: 50%;
+        /* background-color: green; */
+    }
+
+    .left h2{
+        font-size: 15vw;
+        width: 100%;
+        font-weight: 300;
+        line-height: 0.9;
+        text-align: center;
+    }
+    .left span{
+        color: lightseagreen;
+    }
+    .left p{
+        font-size: 3.3vw;
+        width: 100%;
+        text-align: center;
+
+    }
+    .left button{
+        font-size: 4vw;
+        padding: 3vw 3vw;
+        margin-top: 2vw;
+        border-radius: 2vw;
+        background-color: lightseagreen;
+        color: white;
+    }
+
+    .right img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        margin-top: 1vw;
+    }
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-items {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Off-screen position */
+        width: 50vw; /* Adjust the width as needed */
+        height: 100%;
+        background-color: #333;
+        color: white;
+        transition: left 0.3s ease;
+        overflow-y: auto; /* Enable scrolling if menu content overflows */
+    }
+
+    .menu-items.open {
+        left: 0; /* Show the menu items */
+    }
+
+
+}

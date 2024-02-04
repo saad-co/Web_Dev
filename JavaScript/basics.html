@@ -1,11 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>To-Do App</title>
 </head>
 <body>
-    
-    <script src="basics.js"></script>
+
+    <div id="taskList">
+        <!-- Display tasks here -->
+    </div>
+
+    <form id="addTaskForm">
+        <label>Title: <input type="text" id="titleInput" required></label>
+        <label>Description: <input type="text" id="descriptionInput" required></label>
+        <label>Due Date: <input type="text" id="dueDateInput" placeholder="dd-mm-yyyy" required></label>
+        <button type="button" onclick="addTask()">Add Task</button>
+    </form>
+
+    <form id="markCompletedForm">
+        <label>Task ID: <input type="number" id="taskIdInput" required></label>
+        <button type="button" onclick="markTaskAsCompleted()">Mark as Completed</button>
+    </form>
+
+    <button type="button" onclick="displayTasks()">Show Tasks</button>
+
+    <script src="script.js"></script>
 </body>
 </html>

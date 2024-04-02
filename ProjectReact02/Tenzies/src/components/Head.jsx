@@ -2,28 +2,27 @@ import React, { useState, useEffect } from "react";
 
 export default function Head(props) {
     const [secondsElapsed, setSecondsElapsed] = useState(0);
-    const [gameStarted, setGameStarted] = useState(props.startStop);
 
     useEffect(() => {
-        let timer;
-        if (gameStarted) {
-            timer = setInterval(() => {
+        let interval;
+        if (props.startStop) {
+            interval = setInterval(() => {
                 setSecondsElapsed(prevSeconds => prevSeconds + 1);
             }, 1000);
-        } else {
-            setSecondsElapsed(0); // Reset seconds elapsed when game stops
         }
-
+        if (!props.startStop) {
+            setSecondsElapsed(0);
+        }
         return () => {
-            clearInterval(timer);
+            clearInterval(interval);
         };
-    }, [gameStarted]);
+    }, [props.startStop]);
 
     return (
         <div className="head">
             <button className="count-but">Count: {props.value}</button>
             <h1 className="title">Tenzies</h1>
-            <button className="count-but">Time: {secondsElapsed}s</button>
+            <button className="count-but">Time: {secondsElapsed}</button>
         </div>
     );
 }

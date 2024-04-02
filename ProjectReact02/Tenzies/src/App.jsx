@@ -61,6 +61,7 @@ export default function App() {
       setTenzies(false);
       setDiceNumbers(allNewDice);
       setCount(0);
+      startStopTimer(false);
     }
   }
 

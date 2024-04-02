@@ -19,6 +19,38 @@
   margin: 0;
   box-sizing: border-box;
 }
+/* App.css */
+.dot-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.count-but {
+  background-color: rgba(194, 194, 131, 0.454);
+  padding: 0.8rem;
+  width: 130px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 1000;
+  cursor: pointer;
+  border: none;
+  color: black;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
 
 .main {
   background-color: #f5f5f5;
@@ -32,12 +64,12 @@
   gap: 2.5rem;
 }
 
-.main h1{
+.main h1 {
   color: black;
   font-weight: 12000;
 }
 
-.main p{
+.main p {
   color: black;
   text-align: center;
 }
@@ -53,13 +85,13 @@
   font-size: 2rem;
   border-radius: 10px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.436);
-  color: black;
+  /* color: black; */
   cursor: pointer;
   font-weight: 1000;
 }
 
 .Die-held {
-  background-color: #59E391;
+  background-color: #59e391;
   width: 70px;
   height: 70px;
   display: flex;

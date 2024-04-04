@@ -1,0 +1,136 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  /* color: rgba(255, 255, 255, 0.87); */
+  background-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ---------------------Start Page css-------------------------------- */
+.main {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  gap: 40px;
+}
+
+.para {
+  text-align: center;
+  width: 50%;
+  font-weight: 10000;
+  font-size: 1.1rem;
+}
+
+.start-butt {
+  background-color: rgba(46, 46, 140, 0.756);
+  height: 2.1rem;
+  width: 10rem;
+  border: none;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ------------------------Quiz page css---------------------------- */
+.Quiz-Page {
+  /* background-color: red; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 5rem;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  gap: 0.2rem;
+}
+
+.ques-div {
+  /* background-color: yellow; */
+  width: 100%;
+  height: 15vh;
+  border-bottom: 1px solid black;
+  color: black;
+  font-size: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0.4rem;
+  /* padding: 2rem; */
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.radio-button {
+  margin-bottom: 10px;
+}
+
+.radio-button input[type="radio"] {
+  display: none;
+}
+
+.radio-button input[type="radio"]:checked + label {
+  background-color: #629f46ee;
+  color: white;
+}
+
+.radio-button label {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #cfccccd3;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.check-but {
+  background-color: rgba(46, 46, 140, 0.756);
+  height: 2rem;
+  width: 10rem;
+  border: none;
+  padding: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.clicked-but {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}

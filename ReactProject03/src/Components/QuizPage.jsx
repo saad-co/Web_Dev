@@ -109,7 +109,7 @@ export default function QuizPage() {
             {!clicked ?
                 (<div className='checkall-but'>
                     {temp && <h1>Please Check all the Options</h1>}
-                    <button className='check-but' onClick={checkingAnswers}>Check Answers</button>
+                    {questionData.length > 0 && <button className='check-but' onClick={checkingAnswers}>Check Answers</button>}
                 </div>)
                 :
                 (<div className='clicked-but'>

@@ -6,6 +6,7 @@ export default function QuizPage() {
     const [correctCount, setCorrectCount] = useState(0);
     const [clicked, setClicked] = useState(false);
     const [temp, setTemp] = useState(false);
+    const [effectVal, setEffectVal] = useState(true);
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -16,6 +17,7 @@ export default function QuizPage() {
     }
 
     useEffect(() => {
+        console.log("effect ran");
         fetch("https://opentdb.com/api.php?amount=5&type=multiple")
             .then(res => res.json())
             .then(data => {
@@ -35,7 +37,7 @@ export default function QuizPage() {
                 console.error('Error fetching data:', error);
                 // Display error message to user
             });
-    }, []);
+    }, [effectVal]);
 
     function objectsAreEqual(obj1, obj2) {
         if (Object.keys(obj1).length !== Object.keys(obj2).length) {
@@ -77,7 +79,7 @@ export default function QuizPage() {
     function playAgain() {
         setClicked(false);
         setTemp(false);
-        setQuestionData(prevData => prevData.map(item => ({ ...item, userChecked: "" })));
+        setEffectVal(prev => !prev);
     }
 
     const elementsArray = questionData.map((item, index) => (
@@ -105,7 +107,7 @@ export default function QuizPage() {
         <div className="Quiz-Page">
             {questionData.length > 0 ? elementsArray : <h1>Loading...</h1>}
             {!clicked ?
-                (<div>
+                (<div className='checkall-but'>
                     {temp && <h1>Please Check all the Options</h1>}
                     <button className='check-but' onClick={checkingAnswers}>Check Answers</button>
                 </div>)

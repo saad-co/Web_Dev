@@ -17,7 +17,7 @@ export default function QuizPage() {
     }
 
     useEffect(() => {
-        console.log("effect ran");
+        // console.log("effect ran");
         fetch("https://opentdb.com/api.php?amount=5&type=multiple")
             .then(res => res.json())
             .then(data => {
@@ -68,12 +68,25 @@ export default function QuizPage() {
     function checkingAnswers() {
         const allChecked = questionData.every(item => item.userChecked !== "");
         if (allChecked) {
+            changingCSS();
             const correct = countCorrectAnswers();
             setCorrectCount(correct);
             setClicked(true);
         } else {
             setTemp(true);
         }
+    }
+
+    function changingCSS() {
+        console.log("in css fun");
+        const updatedData = questionData.map(item => {
+            if (item.userChecked !== item.correctAns) {
+                return { ...item, userChecked: item.userChecked, isWrong: true };
+            }
+            return item;
+        });
+        setQuestionData(updatedData);
+        console.log(updatedData);
     }
 
     function playAgain() {
@@ -87,7 +100,7 @@ export default function QuizPage() {
             <h1>{item.question}</h1>
             <div className='box'>
                 {item.choices.map((choice, choiceIndex) => (
-                    <div key={choiceIndex} className="radio-button" >
+                    <div key={choiceIndex} className={item.isWrong && item.correctAns === choice ? "correct-button" : (item.isWrong && item.userChecked === choice ? "wronge-button" : "radio-button")} >
                         <input
                             type="radio"
                             id={`mcq-${index}-${choiceIndex}`}

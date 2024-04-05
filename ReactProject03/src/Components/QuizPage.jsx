@@ -17,7 +17,6 @@ export default function QuizPage() {
     }
 
     useEffect(() => {
-        // console.log("effect ran");
         fetch("https://opentdb.com/api.php?amount=5&type=multiple")
             .then(res => res.json())
             .then(data => {
@@ -78,7 +77,6 @@ export default function QuizPage() {
     }
 
     function changingCSS() {
-        console.log("in css fun");
         const updatedData = questionData.map(item => {
             if (item.userChecked !== item.correctAns) {
                 return { ...item, userChecked: item.userChecked, isWrong: true };
@@ -86,7 +84,6 @@ export default function QuizPage() {
             return item;
         });
         setQuestionData(updatedData);
-        console.log(updatedData);
     }
 
     function playAgain() {

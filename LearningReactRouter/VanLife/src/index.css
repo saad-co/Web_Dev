@@ -258,7 +258,7 @@ a {
   font-size: 1.5rem;
 }
 
-.van-detail button{
+.van-detail button {
   background-color: orange;
   height: 7rem;
   width: 80%;
@@ -268,6 +268,133 @@ a {
   font-size: 1.4rem;
 }
 
+/* ------------------------hostlayout------------------------------ */
 
-/* ------------------------------------------------------ */
+.second-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin: 2rem 0;
+  color: black;
+}
 
+.second-nav a {
+  color: black;
+}
+
+.host-layout {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin-bottom: 2rem;
+  height: 100%;
+}
+
+footer {
+  background-color: #161616;
+  color: #aaaaaa;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 500;
+}
+
+.sec-host-van {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.host-van-single {
+  border-bottom: 1px solid black;
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  margin-bottom: 1rem;
+  gap: 20rem;
+  background-color: beige;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.host-van-single img {
+  height: 10rem;
+  border-radius: 15px;
+}
+
+.host-vans-list a {
+  color: black;
+}
+
+.host-vans-list {
+  padding: 2rem;
+}
+
+.host-van-detail-layout-container {
+  /* height: 100vh; */
+  width: 97%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #aaaaaa;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.blah {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  color: black;
+  gap: 2rem;
+}
+
+.blah a {
+  color: #161616;
+}
+
+.host-van-detail-layout-container img {
+  height: 40vh;
+  border-radius: 10px;
+}
+
+.host-van-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  background-color: #aaaaaa;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.host-van-detail-info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tma {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}

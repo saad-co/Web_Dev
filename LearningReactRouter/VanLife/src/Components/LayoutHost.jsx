@@ -28,7 +28,7 @@ export default function LayoutHost() {
                 <NavLink
                     style={({ isActive }) => (isActive ? obj : {})}
 
-                    to={"vans"}
+                    to={"hostvans"}
                 >
                     Vans
                 </NavLink>

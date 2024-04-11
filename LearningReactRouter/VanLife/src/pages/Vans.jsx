@@ -1,20 +1,45 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
+import { Link, useSearchParams, useLoaderData } from "react-router-dom";
+import { GetVans } from "../api";
+
+
+export function loader() {
+    return GetVans();
+}
 
 
 export default function Vans() {
-    const [vansData, setVansData] = useState([]);
-    useEffect(() => {
-        fetch("/api/vans")
-            .then(res => res.json())
-            .then(data => setVansData(data.vans))
-            .catch(err => console.log("err fetching data: " + err));
-    }, [])
+    const [typeFilter, setTypeFilter] = useSearchParams();
+    const [error, setError] = useState(null)
+    const vansData = useLoaderData();
 
-    const elemArr = vansData.map((item, index) => {
+
+    const getFilterData = typeFilter.get("type");
+    const toDisplay = !getFilterData ? vansData :
+        vansData.filter(item => item.type.toLowerCase() === getFilterData);
+
+
+
+
+
+
+
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
+
+
+
+
+    const elemArr = toDisplay.map((item, index) => {
         return (
             <div className="van-component" key={index}>
-                <Link to={`/vans/${item.id}`}>
+                <Link to={item.id} state={
+                    {
+                        search: `?${typeFilter.toString()}`,
+                        type: getFilterData
+                    }
+                }>
                     <img src={item.imageUrl} alt="" />
                     <div className="bottom">
                         <div className="left">
@@ -35,10 +60,12 @@ export default function Vans() {
             <div className="filter-component">
                 <h1>Explore our van options</h1>
                 <div className="filters">
-                    <button>Simple</button>
-                    <button>Luxury</button>
-                    <button>Rugged</button>
-                    <p>Clear Filter</p>
+                    <button
+                        onClick={() => setTypeFilter({ type: "simple" })}
+                        className={`vn-t ${getFilterData === "simple" ? "selected" : ""}`}>Simple</button>
+                    <button onClick={() => setTypeFilter({ type: "luxury" })} className={`vn-t ${getFilterData === "luxury" ? "selected" : ""}`}>Luxury</button>
+                    <button onClick={() => setTypeFilter({ type: "rugged" })} className={`vn-t ${getFilterData === "rugged" ? "selected" : ""}`}>Rugged</button>
+                    {getFilterData && <button onClick={() => setTypeFilter({})}>Clear Filter</button>}
                 </div>
             </div>
             <div className="tili">

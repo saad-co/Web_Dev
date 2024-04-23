@@ -1,23 +1,16 @@
-import { Link, useParams, Outlet, NavLink } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { Link, useParams, Outlet, NavLink, useLoaderData } from "react-router-dom";
+import { GetHostVans } from "../../api";
 import "../server"
+import { requireAuth } from "../../utils";
+
+
+export async function loader({ params }) {
+    await requireAuth();
+    return GetHostVans(params.id);
+}
 
 export default function HostVanDetail() {
-    const param = useParams();
-    const [data, setData] = useState({});
-    useEffect(() => {
-        async function getData() {
-            const res = await fetch(`/api/host/vans/${param.id}`)
-            const data1 = await res.json();
-            setData(data1.vans[0]);
-        }
-
-        getData();
-    }, [param.id])
-
-    if (!data) {
-        return <h1>Loading...</h1>
-    }
+    const data = useLoaderData();
 
     const objStyle = {
         fontWeight: "bold",
@@ -52,7 +45,7 @@ export default function HostVanDetail() {
                     <NavLink to={"pricing"} style={({ isActive }) => isActive ? objStyle : {}}>Pricing</NavLink>
                     <NavLink to={"photos"} style={({ isActive }) => isActive ? objStyle : {}}>Photos</NavLink>
                 </nav>
-                <Outlet context={{data}} />
+                <Outlet context={{ data }} />
             </div>
         </section>
     )

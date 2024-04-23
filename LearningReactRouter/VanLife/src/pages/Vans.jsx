@@ -13,7 +13,6 @@ export default function Vans() {
     const [error, setError] = useState(null)
     const vansData = useLoaderData();
 
-
     const getFilterData = typeFilter.get("type");
     const toDisplay = !getFilterData ? vansData :
         vansData.filter(item => item.type.toLowerCase() === getFilterData);
